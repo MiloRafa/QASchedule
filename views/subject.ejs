@@ -1,0 +1,16 @@
+<%- include header.ejs %>
+<h1> Add Course </h1>
+<form action="/group" method="post">
+    <label for="date">Date:</label>
+    <input class="datepicker" name="date" type="date" value="<%= data.date%>">
+    <hr>
+    <select name="subject">
+        <% data.subjects.forEach(subject=> {
+            console.log(subject)%>
+        <option value="<%= subject.skillid%>">
+            <%= subject.subject%>
+        </option>
+        <%})%>
+    </select>
+    <input type="submit" class="btn btn-primary">
+</form>
